@@ -27,3 +27,5 @@ vue开始学习
         arr: ['red', 'blue', 'yellow']
       }
     })
+7. style的绑定
+8. v-show 和v-if以及v-else-if的使用
