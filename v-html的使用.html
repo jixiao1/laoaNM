@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>v-html的使用</title>
+  <script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
+</head>
+<body>
+  <div id="app">
+    <!-- v-html 相当于innerHTML -->
+      <!-- innerHTML在项目中非常少用到 xss -->
+    <div v-html="mark"></div>
+  </div>
+  <script>
+    var vm = new Vue({
+      el: '#app',
+      data: {
+        mark: "<mark>千锋教育</mark>",
+      }
+    })
+  </script>
+</body>
+</html>
