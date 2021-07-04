@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .box {
+      width: 100px;
+      height: 100px;
+      border: 1px solid red;
+    }
+    .red {
+      background-color: red;
+    }
+    .blue {
+      background-color: blue;
+    }
+    .yellow {
+      background-color: yellow;
+    }
+  </style>
+  <script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
+</head>
+<body>
+  <div id="app">
+    <div class="box" :class="value"></div>
+    <div :class="'box '+ value"></div>
+    <div :title="value" title="box"></div>
+    <hr>
+    <div class="box" :class="obj"></div>
+    <div class="box" :class="{red: true, yellow: false, blue: isActive}"></div>
+    <div class="box" :class="arr"></div>
+    <div class="box" :class="[{blue: true}, {green: false}, 'red']"></div>
+  </div>
+  <script>
+    var vm = new Vue({
+      el: '#app',
+      data: {
+        value: 'red',
+        obj: {
+          red: false,
+          blue: true,
+          yellow: true
+        },
+        isActive: true,
+        arr: ['red', 'blue', 'yellow']
+      }
+    })
+  </script>
+</body>
+</html>

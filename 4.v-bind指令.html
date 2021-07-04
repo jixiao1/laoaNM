@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>v-html的使用</title>
+  <script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
+</head>
+<body>
+  <div id="app">
+    <div :title="message">教育改变人生</div>
+    <div v-bind:title="message">教育改变人生</div>
+    <a :href="path" :target="target">百度一下</a>
+     <!-- 初始值 -->
+     <input :type="type" :checked="value">
+     <input type="text" :value="message">
+  </div>
+  <script>
+     const app = new Vue({
+        el: "#app",
+        data: {
+          message: 'hello vue',
+          path: 'https://www.baidu.com',
+          target: '_blank',
+          type: 'checkbox',
+          value: true
+        },
+      });
+  </script>
+</body>
+</html>
