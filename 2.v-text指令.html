@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>v-text</title>
+  <script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
+</head>
+<body>
+  <div id="app">
+    <h1>{{message}}</h1>
+    <div v-text="mask"></div>
+    <div>{{ obj.name }}</div>
+    <div> {{ obj.age }}</div>
+    <ul>
+      <li v-for="(item, index) in arr" :key="item+index">
+        索引: {{index}} ---- 值： {{ item }}
+      </li>
+    </ul>
+  </div>
+  <script>
+    var vm = new Vue({
+      el: '#app', 
+      data: {
+        message: 'hello world',
+        mask: `<h1>你很优秀</h1>`,
+        obj: {
+          name: 'jixiao',
+          age: 18
+        },
+        arr: [1,2,3,4,5]
+      }
+    })
+  </script>
+</body>
+</html>
