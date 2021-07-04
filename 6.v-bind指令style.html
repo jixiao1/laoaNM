@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>v-bind指令</title>
+    <style>
+      .box{
+        width: 100px;
+        height: 100px;
+        border: 10px solid #333;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="app">
+      <div class="box" style="background-color: red; border-radius: 10px; box-shadow: 6px 6px 9px saddlebrown;"></div>
+      <div class="box" :style="`background-color: ${bgColor}; border-radius: 10px; box-shadow: 6px 6px 9px saddlebrown;`"></div>
+
+      <div class="box" :style="styleObj"></div>
+      <div class="box" :style="{
+        backgroundColor: bgColor,
+        'border-radius': '10px',
+        'box-shadow': '6px 6px 9px saddlebrown'
+      }"></div>
+
+      <div class="box" :style="[{backgroundColor: bgColor}, {'border-radius': radius+'px'}]"></div>
+
+    </div>
+
+    <script src="./vue.js"></script>
+
+    <script>
+      const app = new Vue({
+        el: "#app",
+        data: {
+          styleObj: {
+            backgroundColor: 'red',
+            'border-radius': '10px',
+            'box-shadow': '6px 6px 9px saddlebrown'
+          },
+          bgColor: 'yellow',
+          radius: 10
+        }
+      });
+    </script>
+  </body>
+</html>
